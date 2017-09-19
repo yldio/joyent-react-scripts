@@ -1,3 +1,4 @@
+const cosmiconfig = require('cosmiconfig');
 const webpack = require('webpack');
 const isString = require('lodash.isstring');
 const fs = require('fs');
@@ -6,14 +7,17 @@ const path = require('path');
 const FRONTEND_ROOT = process.cwd();
 const FRONTEND = path.join(FRONTEND_ROOT, 'src');
 
+const babelExplorer = cosmiconfig('babel', {
+  sync: true
+});
+
 const BabelLoader = loader => ({
   test: loader.test,
   include: loader.include,
   loader: loader.loader,
-  options: {
-    babelrc: true,
-    cacheDirectory: true
-  }
+  options: Object.assign(babelExplorer.load(FRONTEND_ROOT).config, {
+    compact: true
+  })
 });
 
 const FileLoader = loader => ({

@@ -1,16 +1,17 @@
 {
   "name": "joyent-react-scripts",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "license": "MPL-2.0",
   "repository": "github:yldio/joyent-react-scripts",
   "bin": "index.js",
   "scripts": {
     "lint": "eslint . --fix",
-    "fmt": "prettier --write --single-quote ./*.js"
+    "fmt": "prettier --write --single-quote *.js src/*.js"
   },
   "dependencies": {
     "apr-for-each": "^1.0.6",
     "apr-main": "^1.0.7",
+    "cosmiconfig": "^3.0.1",
     "mz": "^2.7.0",
     "react-scripts": "^1.0.13"
   },
