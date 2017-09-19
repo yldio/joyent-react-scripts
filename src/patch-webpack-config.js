@@ -1,4 +1,4 @@
-const cosmiconfig = require('cosmiconfig');
+const MinifyPlugin = require('babel-minify-webpack-plugin');
 const webpack = require('webpack');
 const isString = require('lodash.isstring');
 const fs = require('fs');
@@ -7,17 +7,14 @@ const path = require('path');
 const FRONTEND_ROOT = process.cwd();
 const FRONTEND = path.join(FRONTEND_ROOT, 'src');
 
-const babelExplorer = cosmiconfig('babel', {
-  sync: true
-});
-
 const BabelLoader = loader => ({
   test: loader.test,
   include: loader.include,
   loader: loader.loader,
-  options: Object.assign(babelExplorer.load(FRONTEND_ROOT).config, {
+  options: {
+    babelrc: true,
     compact: true
-  })
+  }
 });
 
 const FileLoader = loader => ({
@@ -29,8 +26,11 @@ const FileLoader = loader => ({
 module.exports = config => {
   config.resolve.plugins = [];
 
-  config.plugins = config.plugins.filter(
-    plugin => !(plugin instanceof webpack.optimize.UglifyJsPlugin)
+  config.plugins = config.plugins.map(
+    plugin =>
+      plugin instanceof webpack.optimize.UglifyJsPlugin
+        ? new MinifyPlugin()
+        : plugin
   );
 
   config.module.rules = config.module.rules
