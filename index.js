@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const main = require('apr-main');
 const postinstall = require('./src/postinstall');
 
