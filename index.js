@@ -3,8 +3,10 @@
 const main = require('apr-main');
 const postinstall = require('./src/postinstall');
 
-main(async () => {
-  await postinstall();
+main(() =>
+  (async () => {
+    await postinstall();
 
-  require('react-scripts/bin/react-scripts');
-});
+    require('react-scripts/bin/react-scripts');
+  })()
+);
