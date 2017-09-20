@@ -1,6 +1,6 @@
 {
   "name": "joyent-react-scripts",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "license": "MPL-2.0",
   "repository": "github:yldio/joyent-react-scripts",
   "bin": "index.js",
@@ -12,6 +12,8 @@
     "apr-for-each": "^1.0.6",
     "apr-main": "^1.0.7",
     "babel-minify-webpack-plugin": "^0.2.0",
+    "graphql-tag": "^2.4.2",
+    "lodash.isstring": "^4.0.1",
     "mz": "^2.7.0",
     "react-scripts": "^1.0.13"
   },
