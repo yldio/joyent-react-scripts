@@ -24,7 +24,7 @@ const FileLoader = loader => ({
 });
 
 module.exports = config => {
-  config.resolve.plugins = [];
+  config.resolve.alias['moment$'] = 'moment/moment.js';
 
   config.plugins = config.plugins.map(
     plugin =>
