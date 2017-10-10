@@ -1,6 +1,6 @@
 {
   "name": "joyent-react-scripts",
-  "version": "2.0.2",
+  "version": "2.1.1",
   "license": "MPL-2.0",
   "repository": "github:yldio/joyent-react-scripts",
   "bin": "index.js",
@@ -12,6 +12,7 @@
     "apr-for-each": "^1.0.6",
     "apr-main": "^1.0.7",
     "babel-minify-webpack-plugin": "^0.2.0",
+    "graphql": "^0.11.7",
     "graphql-tag": "^2.4.2",
     "lodash.isstring": "^4.0.1",
     "mz": "^2.7.0",
@@ -20,7 +21,7 @@
   "devDependencies": {
     "babel-eslint": "^8.0.1",
     "eslint": "^4.8.0",
-    "eslint-config-joyent-portal": "3.0.0",
+    "eslint-config-joyent-portal": "3.1.0",
     "eslint-config-prettier": "^2.6.0",
     "eslint-config-react-app": "^2.0.1",
     "eslint-config-xo-space": "^0.16.0",
