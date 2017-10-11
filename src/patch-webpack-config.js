@@ -1,4 +1,5 @@
 const MinifyPlugin = require('babel-minify-webpack-plugin');
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const webpack = require('webpack');
 const isString = require('lodash.isstring');
 const fs = require('fs');
@@ -25,6 +26,8 @@ const FileLoader = loader => ({
 
 module.exports = config => {
   config.resolve.alias['moment$'] = 'moment/moment.js';
+
+  config.plugins = config.plugins.concat([new LodashModuleReplacementPlugin()]);
 
   config.plugins = config.plugins.map(
     plugin =>
