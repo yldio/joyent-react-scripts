@@ -5,7 +5,7 @@
   "repository": "github:yldio/joyent-react-scripts",
   "bin": "index.js",
   "scripts": {
-    "lint": "eslint . --fix",
+    "test": "eslint . --fix",
     "fmt": "prettier --write --single-quote *.js src/*.js"
   },
   "dependencies": {
