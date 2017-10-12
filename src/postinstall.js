@@ -6,12 +6,18 @@ const forEach = require('apr-for-each');
 const ROOT = path.dirname(require.resolve('react-scripts/package.json'));
 const CONF_ROOT = path.join(ROOT, 'config');
 
-const configs = ['webpack.config.dev', 'webpack.config.prod'];
+const configs = [
+  'webpack.config.dev',
+  'webpack.config.prod',
+  'webpackDevServer.config'
+];
 
 const toCopy = [
   'patch-webpack-config',
+  'ssr-middleware',
   'webpack.config.dev',
-  'webpack.config.prod'
+  'webpack.config.prod',
+  'webpackDevServer.config'
 ];
 
 const backup = async file => {
