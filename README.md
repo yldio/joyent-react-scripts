@@ -1,5 +1,7 @@
 # joyent-react-scripts
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/yldio/joyent-react-scripts.svg)](https://greenkeeper.io/)
+
 [![npm](https://img.shields.io/npm/v/joyent-react-scripts.svg?style=flat-square)](https://www.npmjs.com/package/joyent-react-scripts)
 [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg?style=flat-square)](https://opensource.org/licenses/MPL-2.0)
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
