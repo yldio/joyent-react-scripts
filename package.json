@@ -1,6 +1,6 @@
 {
   "name": "joyent-react-scripts",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "license": "MPL-2.0",
   "repository": "github:yldio/joyent-react-scripts",
   "bin": "index.js",
@@ -12,13 +12,15 @@
     "apr-for-each": "^1.0.6",
     "apr-main": "^1.0.7",
     "babel-minify-webpack-plugin": "^0.2.0",
+    "duplicate-package-checker-webpack-plugin": "^1.2.6",
     "execa": "^0.8.0",
     "graphql": "^0.11.7",
     "graphql-tag": "^2.4.2",
     "lodash-webpack-plugin": "^0.11.4",
     "lodash.isstring": "^4.0.1",
     "mz": "^2.7.0",
-    "react-scripts": "^1.0.14"
+    "react-scripts": "^1.0.14",
+    "webpack-common-shake": "^1.5.3"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.1",

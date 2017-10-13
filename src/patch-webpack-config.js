@@ -1,3 +1,5 @@
+const DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack-plugin');
+const { Plugin: ShakePlugin } = require('webpack-common-shake');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const webpack = require('webpack');
@@ -27,7 +29,11 @@ const FileLoader = loader => ({
 module.exports = config => {
   config.resolve.alias['moment$'] = 'moment/moment.js';
 
-  config.plugins = config.plugins.concat([new LodashModuleReplacementPlugin()]);
+  config.plugins = config.plugins.concat([
+    new DuplicatePackageCheckerPlugin(),
+    new LodashModuleReplacementPlugin(),
+    new ShakePlugin()
+  ]);
 
   config.plugins = config.plugins.map(
     plugin =>
