@@ -31,7 +31,7 @@ module.exports = config => {
 
   config.plugins = config.plugins.concat([
     new DuplicatePackageCheckerPlugin(),
-    new LodashModuleReplacementPlugin(),
+    new LodashModuleReplacementPlugin({ collections: true }),
     new ShakePlugin()
   ]);
 
