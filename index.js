@@ -3,7 +3,6 @@
 const main = require('apr-main');
 const execa = require('execa');
 const resolveFrom = require('resolve-from');
-const path = require('path');
 
 const postinstall = require('./src/postinstall');
 const bin = resolveFrom(__dirname, 'react-scripts/bin/react-scripts');
