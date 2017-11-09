@@ -16,9 +16,11 @@ module.exports = (resolve, rootDir, isEjecting) => {
   const aliases = scopes.reduce(
     (aliases, scope) =>
       Object.assign(aliases, {
-        [`'^@${scope}/(.*)$'`]: '<rootDir>/src/$1'
+        [`^@${scope}`]: path.join(SRC_ROOT, scope)
       }),
-    {}
+    {
+      '^@root': SRC_ROOT
+    }
   );
 
   return Object.assign(config, {
