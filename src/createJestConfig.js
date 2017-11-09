@@ -16,10 +16,10 @@ module.exports = (resolve, rootDir, isEjecting) => {
   const aliases = scopes.reduce(
     (aliases, scope) =>
       Object.assign(aliases, {
-        [`^@${scope}`]: path.join(SRC_ROOT, scope)
+        [`^@${scope}(/.*)$`]: `<rootDir>/src/${scope}$1`
       }),
     {
-      '^@root': SRC_ROOT
+      '^@root(/.*)$': `<rootDir>/src/$1`
     }
   );
 
