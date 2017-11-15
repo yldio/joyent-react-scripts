@@ -1,6 +1,6 @@
 {
   "name": "joyent-react-scripts",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "license": "MPL-2.0",
   "repository": "github:yldio/joyent-react-scripts",
   "bin": "index.js",
@@ -21,11 +21,12 @@
     "lodash.isstring": "^4.0.1",
     "mz": "^2.7.0",
     "react-scripts": "^1.0.17",
-    "webpack-common-shake": "^1.5.3"
+    "webpack-common-shake": "^1.5.3",
+    "webpack-sources": "1.0.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.2",
-    "eslint": "^4.10.0",
+    "eslint": "^4.11.0",
     "eslint-config-joyent-portal": "3.2.0",
     "eslint-config-prettier": "^2.7.0",
     "eslint-config-react-app": "^2.0.1",
