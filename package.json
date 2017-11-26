@@ -22,7 +22,7 @@
     "mz": "^2.7.0",
     "react-scripts": "^1.0.17",
     "webpack-common-shake": "^1.5.3",
-    "webpack-sources": "1.0.1"
+    "webpack-sources": "1.1.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.2",
