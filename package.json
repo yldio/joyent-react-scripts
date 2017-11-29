@@ -1,6 +1,6 @@
 {
   "name": "joyent-react-scripts",
-  "version": "3.1.1",
+  "version": "4.0.0",
   "license": "MPL-2.0",
   "repository": "github:yldio/joyent-react-scripts",
   "bin": "index.js",
@@ -12,7 +12,7 @@
     "apr-for-each": "^1.0.6",
     "apr-main": "^2.0.2",
     "babel-minify-webpack-plugin": "^0.2.0",
-    "duplicate-package-checker-webpack-plugin": "^2.0.0",
+    "duplicate-package-checker-webpack-plugin": "^2.0.1",
     "execa": "^0.8.0",
     "graphql": "^0.11.7",
     "graphql-tag": "^2.5.0",
@@ -21,14 +21,13 @@
     "lodash.isstring": "^4.0.1",
     "mz": "^2.7.0",
     "react-scripts": "^1.0.17",
-    "webpack-common-shake": "^1.5.3",
-    "webpack-sources": "1.1.0"
+    "webpack-common-shake": "^1.5.3"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.2",
-    "eslint": "^4.11.0",
+    "eslint": "^4.12.0",
     "eslint-config-joyent-portal": "3.2.0",
-    "eslint-config-prettier": "^2.7.0",
+    "eslint-config-prettier": "^2.9.0",
     "eslint-config-react-app": "^2.0.1",
     "eslint-config-xo-space": "^0.17.0",
     "eslint-plugin-flowtype": "^2.39.1",
@@ -36,7 +35,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-markdown": "^1.0.0-beta.6",
     "eslint-plugin-prettier": "^2.3.1",
-    "eslint-plugin-react": "^7.4.0",
+    "eslint-plugin-react": "^7.5.1",
     "prettier": "^1.8.2"
   }
 }
