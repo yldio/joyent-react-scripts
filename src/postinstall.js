@@ -7,7 +7,9 @@ const ROOT = path.dirname(require.resolve('react-scripts/package.json'));
 
 const configMap = {
   'webpack.config.dev': 'config/webpack.config.dev',
+  'webpackDevServer.config': 'config/webpackDevServer.config',
   'webpack.config.prod': 'config/webpack.config.prod',
+  'patch-dev-server-config': 'config/patch-dev-server-config',
   'patch-webpack-config': 'config/patch-webpack-config',
   createJestConfig: 'scripts/utils/createJestConfig'
 };
