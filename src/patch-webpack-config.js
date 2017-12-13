@@ -1,6 +1,5 @@
 const DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack-plugin');
 const { Plugin: ShakePlugin } = require('webpack-common-shake');
-const MinifyPlugin = require('babel-minify-webpack-plugin');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const webpack = require('webpack');
 const isString = require('lodash.isstring');
@@ -35,11 +34,8 @@ module.exports = config => {
     new ShakePlugin()
   ]);
 
-  config.plugins = config.plugins.map(
-    plugin =>
-      plugin instanceof webpack.optimize.UglifyJsPlugin
-        ? new MinifyPlugin()
-        : plugin
+  config.plugins = config.plugins.filter(
+    plugin => !(plugin instanceof webpack.optimize.UglifyJsPlugin)
   );
 
   config.module.rules = config.module.rules

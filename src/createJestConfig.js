@@ -25,8 +25,11 @@ module.exports = (resolve, rootDir, isEjecting) => {
 
   return Object.assign(config, {
     moduleNameMapper: Object.assign(config.moduleNameMapper, aliases),
-    transform: Object.assign({
-      '^.+\.(graphql|gql)$': require.resolve('jest-transform-graphql')
-    }, config.transform)
+    transform: Object.assign(
+      {
+        '^.+.(graphql|gql)$': require.resolve('jest-transform-graphql')
+      },
+      config.transform
+    )
   });
 };
