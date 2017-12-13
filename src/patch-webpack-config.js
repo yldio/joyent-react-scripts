@@ -7,8 +7,11 @@ const isString = require('lodash.isstring');
 const fs = require('fs');
 const path = require('path');
 
+const { NODE_ENV } = process.env;
+
 const FRONTEND_ROOT = process.cwd();
 const FRONTEND = path.join(FRONTEND_ROOT, 'src');
+const IS_PRODUCTION = (NODE_ENV || '').toLowerCase() === 'production';
 
 const BabelLoader = loader => ({
   test: loader.test,
@@ -32,8 +35,8 @@ module.exports = config => {
   config.plugins = config.plugins.concat([
     new DuplicatePackageCheckerPlugin(),
     new LodashModuleReplacementPlugin({ collections: true }),
-    new ShakePlugin()
-  ]);
+    IS_PRODUCTION && new ShakePlugin()
+  ].filter(Boolean));
 
   config.plugins = config.plugins.map(
     plugin =>
