@@ -7,11 +7,12 @@ const isString = require('lodash.isstring');
 const fs = require('fs');
 const path = require('path');
 
-const { NODE_ENV } = process.env;
+const { NODE_ENV, PREACT } = process.env;
 
 const FRONTEND_ROOT = process.cwd();
 const FRONTEND = path.join(FRONTEND_ROOT, 'src');
 const IS_PRODUCTION = (NODE_ENV || '').toLowerCase() === 'production';
+const USE_PREACT = Boolean(PREACT);
 
 const BabelLoader = loader => ({
   test: loader.test,
@@ -32,11 +33,13 @@ const FileLoader = loader => ({
 module.exports = config => {
   config.resolve.alias.moment$ = 'moment/moment.js';
 
-  config.plugins = config.plugins.concat([
-    new DuplicatePackageCheckerPlugin(),
-    new LodashModuleReplacementPlugin({ collections: true }),
-    IS_PRODUCTION && new ShakePlugin()
-  ].filter(Boolean));
+  config.plugins = config.plugins.concat(
+    [
+      new DuplicatePackageCheckerPlugin(),
+      new LodashModuleReplacementPlugin({ collections: true }),
+      IS_PRODUCTION && new ShakePlugin()
+    ].filter(Boolean)
+  );
 
   config.plugins = config.plugins.map(
     plugin =>
@@ -117,6 +120,13 @@ module.exports = config => {
   config.resolve.alias = Object.assign(
     {},
     config.resolve.alias,
+    !USE_PREACT
+      ? {}
+      : {
+          react: 'preact-compat',
+          'react-dom': 'preact-compat',
+          'create-react-class': 'preact-compat/lib/create-react-class'
+        },
     fs
       .readdirSync(FRONTEND)
       .map(name => path.join(FRONTEND, name))
