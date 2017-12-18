@@ -1,5 +1,6 @@
 const DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack-plugin');
 const { Plugin: ShakePlugin } = require('webpack-common-shake');
+const Visualizer = require('webpack-visualizer-plugin');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const webpack = require('webpack');
@@ -37,7 +38,8 @@ module.exports = config => {
     [
       new DuplicatePackageCheckerPlugin(),
       new LodashModuleReplacementPlugin({ collections: true }),
-      IS_PRODUCTION && new ShakePlugin()
+      IS_PRODUCTION && new ShakePlugin(),
+      IS_PRODUCTION && new Visualizer()
     ].filter(Boolean)
   );
 
