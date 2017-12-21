@@ -9,14 +9,14 @@ const isString = require('lodash.isstring');
 const fs = require('fs');
 const path = require('path');
 
-const { NODE_ENV, MINIFY, PREACT, GENERATE_SOURCEMAP } = process.env;
+const { NODE_ENV, UGLIFYJS, PREACT, GENERATE_SOURCEMAP } = process.env;
 
 const FRONTEND_ROOT = process.cwd();
 const FRONTEND = path.join(FRONTEND_ROOT, 'src');
 const IS_PRODUCTION = (NODE_ENV || '').toLowerCase() === 'production';
 const SHOULD_GENERATE_SOURCEMAP = GENERATE_SOURCEMAP !== 'false';
 const USE_PREACT = Boolean(PREACT);
-const USE_MINIFY = Boolean(USE_MINIFY);
+const USE_UGLIFYJS = Boolean(UGLIFYJS);
 
 const BabelLoader = loader => ({
   test: loader.test,
@@ -35,7 +35,7 @@ const FileLoader = loader => ({
 });
 
 const UglifyJsPlugin = () =>
-  USE_MINIFY
+  !USE_UGLIFYJS
     ? new MinifyPlugin()
     : new UglifyJsPlugin({
         compress: {
