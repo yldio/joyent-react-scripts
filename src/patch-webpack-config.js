@@ -1,3 +1,4 @@
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack-plugin');
 const { Plugin: ShakePlugin } = require('webpack-common-shake');
 const Visualizer = require('webpack-visualizer-plugin');
@@ -8,12 +9,14 @@ const isString = require('lodash.isstring');
 const fs = require('fs');
 const path = require('path');
 
-const { NODE_ENV, PREACT } = process.env;
+const { NODE_ENV, MINIFY, PREACT, GENERATE_SOURCEMAP } = process.env;
 
 const FRONTEND_ROOT = process.cwd();
 const FRONTEND = path.join(FRONTEND_ROOT, 'src');
 const IS_PRODUCTION = (NODE_ENV || '').toLowerCase() === 'production';
+const SHOULD_GENERATE_SOURCEMAP = GENERATE_SOURCEMAP !== 'false';
 const USE_PREACT = Boolean(PREACT);
+const USE_MINIFY = Boolean(USE_MINIFY);
 
 const BabelLoader = loader => ({
   test: loader.test,
@@ -31,6 +34,24 @@ const FileLoader = loader => ({
   options: loader.options
 });
 
+const UglifyJsPlugin = () =>
+  USE_MINIFY
+    ? new MinifyPlugin()
+    : new UglifyJsPlugin({
+        compress: {
+          warnings: false,
+          comparisons: false
+        },
+        mangle: {
+          safari10: true
+        },
+        output: {
+          comments: false,
+          ascii_only: true
+        },
+        sourceMap: SHOULD_GENERATE_SOURCEMAP
+      });
+
 module.exports = config => {
   config.resolve.alias.moment$ = 'moment/moment.js';
 
@@ -46,7 +67,7 @@ module.exports = config => {
   config.plugins = config.plugins.map(
     plugin =>
       plugin instanceof webpack.optimize.UglifyJsPlugin
-        ? new MinifyPlugin()
+        ? UglifyJsPlugin()
         : plugin
   );
 

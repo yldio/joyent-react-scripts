@@ -25,7 +25,7 @@ module.exports = (resolve, rootDir, isEjecting) => {
 
   try {
     const __aliases__ = require(path.join(SRC_ROOT, 'mocks/__aliases__.js'));
-    Object.keys(__aliases__).forEach((k) => aliases[k] = __aliases__[k]);
+    Object.keys(__aliases__).forEach(k => (aliases[k] = __aliases__[k]));
   } catch (err) {
     console.error(err);
   }
