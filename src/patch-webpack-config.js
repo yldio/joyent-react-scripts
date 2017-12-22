@@ -34,7 +34,7 @@ const FileLoader = loader => ({
   options: loader.options
 });
 
-const UglifyJsPlugin = () =>
+const Minify = () =>
   !USE_UGLIFYJS
     ? new MinifyPlugin()
     : new UglifyJsPlugin({
@@ -67,7 +67,7 @@ module.exports = config => {
   config.plugins = config.plugins.map(
     plugin =>
       plugin instanceof webpack.optimize.UglifyJsPlugin
-        ? UglifyJsPlugin()
+        ? Minify()
         : plugin
   );
 
