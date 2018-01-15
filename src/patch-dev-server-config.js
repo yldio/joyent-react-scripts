@@ -37,12 +37,12 @@ module.exports = originalConfigFn => (proxy, allowedHost) => {
             }
 
             res.setHeader('content-type', headers['content-type']);
-            res.setHeader('expires', headers['expires']);
-            res.setHeader('date', headers['date']);
+            res.setHeader('expires', headers.expires);
+            res.setHeader('date', headers.date);
             res.setHeader('cache-control', headers['cache-control']);
 
             const newBody = body.replace(
-              /https\:\/\/fonts\.gstatic\.com/g,
+              /https:\/\/fonts\.gstatic\.com/g,
               `http://${address}:${port}/font`
             );
 

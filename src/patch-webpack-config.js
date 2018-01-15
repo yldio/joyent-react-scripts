@@ -35,9 +35,8 @@ const FileLoader = loader => ({
 });
 
 const Minify = () =>
-  !USE_UGLIFYJS
-    ? new MinifyPlugin()
-    : new UglifyJsPlugin({
+  USE_UGLIFYJS
+    ? new UglifyJsPlugin({
         compress: {
           warnings: false,
           comparisons: false
@@ -47,10 +46,12 @@ const Minify = () =>
         },
         output: {
           comments: false,
+          // eslint-disable-next-line camelcase
           ascii_only: true
         },
         sourceMap: SHOULD_GENERATE_SOURCEMAP
-      });
+      })
+    : new MinifyPlugin();
 
 module.exports = config => {
   config.resolve.alias.moment$ = 'moment/moment.js';
@@ -66,9 +67,7 @@ module.exports = config => {
 
   config.plugins = config.plugins.map(
     plugin =>
-      plugin instanceof webpack.optimize.UglifyJsPlugin
-        ? Minify()
-        : plugin
+      plugin instanceof webpack.optimize.UglifyJsPlugin ? Minify() : plugin
   );
 
   config.module.rules = config.module.rules
@@ -143,13 +142,13 @@ module.exports = config => {
   config.resolve.alias = Object.assign(
     {},
     config.resolve.alias,
-    !USE_PREACT
-      ? {}
-      : {
+    USE_PREACT
+      ? {
           react: 'preact-compat',
           'react-dom': 'preact-compat',
           'create-react-class': 'preact-compat/lib/create-react-class'
-        },
+        }
+      : {},
     fs
       .readdirSync(FRONTEND)
       .map(name => path.join(FRONTEND, name))
