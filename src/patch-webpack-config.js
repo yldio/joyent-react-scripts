@@ -2,6 +2,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack-plugin');
 const { Plugin: ShakePlugin } = require('webpack-common-shake');
 const Visualizer = require('webpack-visualizer-plugin');
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const webpack = require('webpack');
@@ -65,10 +66,39 @@ module.exports = config => {
     ].filter(Boolean)
   );
 
-  config.plugins = config.plugins.map(
-    plugin =>
-      plugin instanceof webpack.optimize.UglifyJsPlugin ? Minify() : plugin
-  );
+  config.plugins = config.plugins.map(plugin => {
+    if (plugin instanceof webpack.optimize.UglifyJsPlugin) {
+      return Minify();
+    }
+
+    // remove when https://github.com/facebookincubator/create-react-app/pull/3419/files is published
+    if (plugin instanceof SWPrecacheWebpackPlugin) {
+      return new SWPrecacheWebpackPlugin({
+        dontCacheBustUrlsMatching: /\.\w{8}\./,
+        filename: 'service-worker.js',
+        logger(message) {
+          if (message.indexOf('Total precache size is') === 0) {
+            // This message occurs for every build and is a bit too noisy.
+            return;
+          }
+
+          if (message.indexOf('Skipping static resource') === 0) {
+            // This message obscures real errors so we ignore it.
+            // https://github.com/facebookincubator/create-react-app/issues/2612
+            return;
+          }
+
+          // eslint-disable-next-line no-console
+          console.log(message);
+        },
+        minify: true,
+        // Don't precache sourcemaps (they're large) and build asset manifest:
+        staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/]
+      });
+    }
+
+    return plugin;
+  });
 
   config.module.rules = config.module.rules
     .reduce((loaders, loader, index) => {
