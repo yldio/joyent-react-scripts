@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "apr-for-each": "^1.0.6",
-    "apr-main": "^2.0.2",
+    "apr-main": "^4.0.0",
     "babel-minify-webpack-plugin": "^0.2.0",
     "duplicate-package-checker-webpack-plugin": "^2.1.0",
     "execa": "^0.9.0",
