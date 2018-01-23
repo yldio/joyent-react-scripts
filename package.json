@@ -9,7 +9,7 @@
     "fmt": "prettier --write --single-quote *.md src/*.js *.json"
   },
   "dependencies": {
-    "apr-for-each": "^1.0.6",
+    "apr-for-each": "^3.0.0",
     "apr-main": "^2.0.2",
     "babel-minify-webpack-plugin": "^0.2.0",
     "duplicate-package-checker-webpack-plugin": "^2.1.0",
