@@ -1,7 +1,7 @@
 const path = require('path');
 
 const { readFile, writeFile, exists } = require('mz/fs');
-const forEach = require('apr-for-each');
+const { default: forEach } = require('apr-for-each');
 
 const ROOT = path.dirname(require.resolve('react-scripts/package.json'));
 
