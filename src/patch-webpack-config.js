@@ -168,7 +168,7 @@ module.exports = config => {
     .concat([
       {
         test: /\.(graphql|gql)$/,
-        exclude: /node_modules/,
+        include: FRONTEND,
         loader: require.resolve('graphql-tag/loader')
       }
     ]);
