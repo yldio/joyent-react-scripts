@@ -114,13 +114,17 @@ module.exports = config => {
                 return l;
               }
 
+              if (IS_PRODUCTION) {
+                return null;
+              }
+
               return Object.assign(l, {
                 options: Object.assign(l.options, {
                   baseConfig: null,
                   useEslintrc: true
                 })
               });
-            })
+            }).filter(Boolean)
           })
         ]);
       }
