@@ -105,26 +105,28 @@ module.exports = config => {
       if (Array.isArray(loader.use)) {
         return loaders.concat([
           Object.assign(loader, {
-            use: loader.use.map(l => {
-              if (isString(l) || !isString(l.loader)) {
-                return l;
-              }
+            use: loader.use
+              .map(l => {
+                if (isString(l) || !isString(l.loader)) {
+                  return l;
+                }
 
-              if (!l.loader.match(/eslint-loader/)) {
-                return l;
-              }
+                if (!l.loader.match(/eslint-loader/)) {
+                  return l;
+                }
 
-              if (IS_PRODUCTION) {
-                return null;
-              }
+                if (IS_PRODUCTION) {
+                  return null;
+                }
 
-              return Object.assign(l, {
-                options: Object.assign(l.options, {
-                  baseConfig: null,
-                  useEslintrc: true
-                })
-              });
-            }).filter(Boolean)
+                return Object.assign(l, {
+                  options: Object.assign(l.options, {
+                    baseConfig: null,
+                    useEslintrc: true
+                  })
+                });
+              })
+              .filter(Boolean)
           })
         ]);
       }
