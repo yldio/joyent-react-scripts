@@ -10,7 +10,13 @@ const isString = require('lodash.isstring');
 const fs = require('fs');
 const path = require('path');
 
-const { NODE_ENV, UGLIFYJS, PREACT, GENERATE_SOURCEMAP } = process.env;
+const {
+  NODE_ENV,
+  UGLIFYJS,
+  PREACT,
+  GENERATE_SOURCEMAP,
+  NAMESPACE
+} = process.env;
 
 const FRONTEND_ROOT = process.cwd();
 const FRONTEND = path.join(FRONTEND_ROOT, 'src');
@@ -55,6 +61,11 @@ const Minify = () =>
     : new MinifyPlugin();
 
 module.exports = config => {
+  if (NAMESPACE) {
+    config.output.filename = `${NAMESPACE}/${config.output.filename}`;
+    config.output.chunkFilename = `${NAMESPACE}/${config.output.chunkFilename}`;
+  }
+
   config.resolve.alias.moment$ = 'moment/moment.js';
 
   config.plugins = config.plugins.concat(
