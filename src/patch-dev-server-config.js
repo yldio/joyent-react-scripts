@@ -1,54 +1,23 @@
-const request = require('request');
+const send = require('send');
+const path = require('path');
 const url = require('url');
+const fs = require('fs');
+
+const { NAMESPACE = '' } = process.env;
+
+const match = `${NAMESPACE ? `/${NAMESPACE}` : ''}/static/*`;
 
 module.exports = originalConfigFn => (proxy, allowedHost) => {
   const originalConf = originalConfigFn(proxy, allowedHost);
+  const { contentBase } = originalConf;
 
   return Object.assign({}, originalConf, {
     before: (app, self) => {
-      app.get('/font/*', ({ params, headers, ...req }, res, next) => {
-        request(
-          url.format({
-            protocol: 'https:',
-            slashes: true,
-            host: 'fonts.gstatic.com',
-            pathname: params['0']
-          })
-        ).pipe(res);
-      });
-
-      app.get('/fonts/css', ({ query, connection }, res, next) => {
-        const { family } = query;
-        const { address, port } = connection.server.address();
-
-        request(
-          url.format({
-            protocol: 'https:',
-            slashes: true,
-            host: 'fonts.googleapis.com',
-            pathname: '/css',
-            query: {
-              family
-            }
-          }),
-          (err, { body, headers }) => {
-            if (err) {
-              return next(err);
-            }
-
-            res.setHeader('content-type', headers['content-type']);
-            res.setHeader('expires', headers.expires);
-            res.setHeader('date', headers.date);
-            res.setHeader('cache-control', headers['cache-control']);
-
-            const newBody = body.replace(
-              /https:\/\/fonts\.gstatic\.com/g,
-              `http://${address}:${port}/font`
-            );
-
-            res.end(newBody);
-          }
-        );
+      app.get(match, ({ params, ...req }, res, next) => {
+        const pathname = path.join(contentBase, 'static', params[0]);
+        fs.access(pathname, fs.constants.R_OK, err => {
+          return err ? next() : send(req, pathname).pipe(res);
+        });
       });
 
       if (originalConf.before) {
