@@ -71,7 +71,7 @@ module.exports = config => {
   config.plugins = config.plugins.concat(
     [
       new DuplicatePackageCheckerPlugin(),
-      new LodashModuleReplacementPlugin({ collections: true }),
+      new LodashModuleReplacementPlugin({ collections: true, flattening: true }),
       IS_PRODUCTION && new ShakePlugin(),
       IS_PRODUCTION && new Visualizer()
     ].filter(Boolean)
