@@ -14,7 +14,7 @@
     "babel-minify-webpack-plugin": "^0.3.1",
     "duplicate-package-checker-webpack-plugin": "^2.1.0",
     "execa": "^0.10.0",
-    "graphql": "^0.13.2",
+    "graphql": "^0.13.1",
     "graphql-tag": "^2.8.0",
     "jest-transform-graphql": "^2.1.0",
     "lodash-webpack-plugin": "^0.11.4",
