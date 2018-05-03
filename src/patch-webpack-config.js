@@ -1,3 +1,5 @@
+const React = require('react');
+const { renderToString } = require('react-dom/server');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack-plugin');
 const { Plugin: ShakePlugin } = require('webpack-common-shake');
@@ -24,6 +26,28 @@ const IS_PRODUCTION = (NODE_ENV || '').toLowerCase() === 'production';
 const SHOULD_GENERATE_SOURCEMAP = GENERATE_SOURCEMAP !== 'false';
 const USE_PREACT = Boolean(PREACT);
 const USE_UGLIFYJS = Boolean(UGLIFYJS);
+const DOCUMENT = path.join(FRONTEND, 'html.js');
+
+require('babel-register')({
+  only: DOCUMENT,
+  sourceRoot: FRONTEND_ROOT,
+  moduleRoot: FRONTEND_ROOT,
+  babelrc: true
+});
+
+const Html = (() => {
+  try {
+    return require(DOCUMENT);
+  } catch (err) {
+    return {};
+  }
+})();
+
+if (Html) {
+  const html = renderToString(React.createElement(Html));
+  const prefix = `<!-- Do not edit. This is a generated file from ${path.relative(FRONTEND_ROOT, DOCUMENT)}. -->`;
+  fs.writeFileSync(path.join(FRONTEND_ROOT, 'public/index.html'), `${prefix}\n${html}`);
+}
 
 const BabelLoader = loader => ({
   test: loader.test,

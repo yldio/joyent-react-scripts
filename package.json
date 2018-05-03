@@ -1,6 +1,6 @@
 {
   "name": "joyent-react-scripts",
-  "version": "8.0.3",
+  "version": "8.1.0",
   "license": "MPL-2.0",
   "repository": "github:yldio/joyent-react-scripts",
   "bin": "index.js",
@@ -12,6 +12,7 @@
     "apr-for-each": "^3.0.3",
     "apr-main": "^4.0.3",
     "babel-minify-webpack-plugin": "^0.3.1",
+    "babel-register": "^6.26.0",
     "duplicate-package-checker-webpack-plugin": "^2.1.0",
     "execa": "^0.10.0",
     "graphql": "^0.13.1",
@@ -40,6 +41,12 @@
     "eslint-plugin-markdown": "^1.0.0-beta.6",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.7.0",
-    "prettier": "^1.11.1"
+    "prettier": "^1.11.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  },
+  "peerDependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
   }
 }
