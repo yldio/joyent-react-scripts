@@ -39,7 +39,7 @@ const Html = (() => {
   try {
     return require(DOCUMENT);
   } catch (err) {
-    return {};
+    return;
   }
 })();
 
