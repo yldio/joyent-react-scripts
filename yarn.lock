@@ -78,6 +78,143 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
+"@webassemblyjs/ast@1.7.6":
+  version "1.7.6"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.7.6.tgz#3ef8c45b3e5e943a153a05281317474fef63e21e"
+  dependencies:
+    "@webassemblyjs/helper-module-context" "1.7.6"
+    "@webassemblyjs/helper-wasm-bytecode" "1.7.6"
+    "@webassemblyjs/wast-parser" "1.7.6"
+    mamacro "^0.0.3"
+
+"@webassemblyjs/floating-point-hex-parser@1.7.6":
+  version "1.7.6"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/floating-point-hex-parser/-/floating-point-hex-parser-1.7.6.tgz#7cb37d51a05c3fe09b464ae7e711d1ab3837801f"
+
+"@webassemblyjs/helper-api-error@1.7.6":
+  version "1.7.6"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-api-error/-/helper-api-error-1.7.6.tgz#99b7e30e66f550a2638299a109dda84a622070ef"
+
+"@webassemblyjs/helper-buffer@1.7.6":
+  version "1.7.6"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-buffer/-/helper-buffer-1.7.6.tgz#ba0648be12bbe560c25c997e175c2018df39ca3e"
+
+"@webassemblyjs/helper-code-frame@1.7.6":
+  version "1.7.6"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.7.6.tgz#5a94d21b0057b69a7403fca0c253c3aaca95b1a5"
+  dependencies:
+    "@webassemblyjs/wast-printer" "1.7.6"
+
+"@webassemblyjs/helper-fsm@1.7.6":
+  version "1.7.6"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-fsm/-/helper-fsm-1.7.6.tgz#ae1741c6f6121213c7a0b587fb964fac492d3e49"
+
+"@webassemblyjs/helper-module-context@1.7.6":
+  version "1.7.6"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-module-context/-/helper-module-context-1.7.6.tgz#116d19a51a6cebc8900ad53ca34ff8269c668c23"
+  dependencies:
+    mamacro "^0.0.3"
+
+"@webassemblyjs/helper-wasm-bytecode@1.7.6":
+  version "1.7.6"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-wasm-bytecode/-/helper-wasm-bytecode-1.7.6.tgz#98e515eaee611aa6834eb5f6a7f8f5b29fefb6f1"
+
+"@webassemblyjs/helper-wasm-section@1.7.6":
+  version "1.7.6"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-wasm-section/-/helper-wasm-section-1.7.6.tgz#783835867bdd686df7a95377ab64f51a275e8333"
+  dependencies:
+    "@webassemblyjs/ast" "1.7.6"
+    "@webassemblyjs/helper-buffer" "1.7.6"
+    "@webassemblyjs/helper-wasm-bytecode" "1.7.6"
+    "@webassemblyjs/wasm-gen" "1.7.6"
+
+"@webassemblyjs/ieee754@1.7.6":
+  version "1.7.6"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/ieee754/-/ieee754-1.7.6.tgz#c34fc058f2f831fae0632a8bb9803cf2d3462eb1"
+  dependencies:
+    "@xtuc/ieee754" "^1.2.0"
+
+"@webassemblyjs/leb128@1.7.6":
+  version "1.7.6"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/leb128/-/leb128-1.7.6.tgz#197f75376a29f6ed6ace15898a310d871d92f03b"
+  dependencies:
+    "@xtuc/long" "4.2.1"
+
+"@webassemblyjs/utf8@1.7.6":
+  version "1.7.6"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/utf8/-/utf8-1.7.6.tgz#eb62c66f906af2be70de0302e29055d25188797d"
+
+"@webassemblyjs/wasm-edit@1.7.6":
+  version "1.7.6"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/wasm-edit/-/wasm-edit-1.7.6.tgz#fa41929160cd7d676d4c28ecef420eed5b3733c5"
+  dependencies:
+    "@webassemblyjs/ast" "1.7.6"
+    "@webassemblyjs/helper-buffer" "1.7.6"
+    "@webassemblyjs/helper-wasm-bytecode" "1.7.6"
+    "@webassemblyjs/helper-wasm-section" "1.7.6"
+    "@webassemblyjs/wasm-gen" "1.7.6"
+    "@webassemblyjs/wasm-opt" "1.7.6"
+    "@webassemblyjs/wasm-parser" "1.7.6"
+    "@webassemblyjs/wast-printer" "1.7.6"
+
+"@webassemblyjs/wasm-gen@1.7.6":
+  version "1.7.6"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/wasm-gen/-/wasm-gen-1.7.6.tgz#695ac38861ab3d72bf763c8c75e5f087ffabc322"
+  dependencies:
+    "@webassemblyjs/ast" "1.7.6"
+    "@webassemblyjs/helper-wasm-bytecode" "1.7.6"
+    "@webassemblyjs/ieee754" "1.7.6"
+    "@webassemblyjs/leb128" "1.7.6"
+    "@webassemblyjs/utf8" "1.7.6"
+
+"@webassemblyjs/wasm-opt@1.7.6":
+  version "1.7.6"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/wasm-opt/-/wasm-opt-1.7.6.tgz#fbafa78e27e1a75ab759a4b658ff3d50b4636c21"
+  dependencies:
+    "@webassemblyjs/ast" "1.7.6"
+    "@webassemblyjs/helper-buffer" "1.7.6"
+    "@webassemblyjs/wasm-gen" "1.7.6"
+    "@webassemblyjs/wasm-parser" "1.7.6"
+
+"@webassemblyjs/wasm-parser@1.7.6":
+  version "1.7.6"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/wasm-parser/-/wasm-parser-1.7.6.tgz#84eafeeff405ad6f4c4b5777d6a28ae54eed51fe"
+  dependencies:
+    "@webassemblyjs/ast" "1.7.6"
+    "@webassemblyjs/helper-api-error" "1.7.6"
+    "@webassemblyjs/helper-wasm-bytecode" "1.7.6"
+    "@webassemblyjs/ieee754" "1.7.6"
+    "@webassemblyjs/leb128" "1.7.6"
+    "@webassemblyjs/utf8" "1.7.6"
+
+"@webassemblyjs/wast-parser@1.7.6":
+  version "1.7.6"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/wast-parser/-/wast-parser-1.7.6.tgz#ca4d20b1516e017c91981773bd7e819d6bd9c6a7"
+  dependencies:
+    "@webassemblyjs/ast" "1.7.6"
+    "@webassemblyjs/floating-point-hex-parser" "1.7.6"
+    "@webassemblyjs/helper-api-error" "1.7.6"
+    "@webassemblyjs/helper-code-frame" "1.7.6"
+    "@webassemblyjs/helper-fsm" "1.7.6"
+    "@xtuc/long" "4.2.1"
+    mamacro "^0.0.3"
+
+"@webassemblyjs/wast-printer@1.7.6":
+  version "1.7.6"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/wast-printer/-/wast-printer-1.7.6.tgz#a6002c526ac5fa230fe2c6d2f1bdbf4aead43a5e"
+  dependencies:
+    "@webassemblyjs/ast" "1.7.6"
+    "@webassemblyjs/wast-parser" "1.7.6"
+    "@xtuc/long" "4.2.1"
+
+"@xtuc/ieee754@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@xtuc/ieee754/-/ieee754-1.2.0.tgz#eef014a3145ae477a1cbc00cd1e552336dceb790"
+
+"@xtuc/long@4.2.1":
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.1.tgz#5c85d662f76fa1d34575766c5dcd6615abcd30d8"
+
 abab@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
@@ -98,6 +235,12 @@ acorn-dynamic-import@^2.0.0:
   resolved "https://registry.yarnpkg.com/acorn-dynamic-import/-/acorn-dynamic-import-2.0.2.tgz#c752bd210bef679501b6c6cb7fc84f8f47158cc4"
   dependencies:
     acorn "^4.0.3"
+
+acorn-dynamic-import@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/acorn-dynamic-import/-/acorn-dynamic-import-3.0.0.tgz#901ceee4c7faaef7e07ad2a47e890675da50a278"
+  dependencies:
+    acorn "^5.0.0"
 
 acorn-globals@^3.1.0:
   version "3.1.0"
@@ -122,6 +265,10 @@ acorn@^4.0.3, acorn@^4.0.4:
 acorn@^5.0.0, acorn@^5.1.1, acorn@^5.2.1, acorn@^5.5.0:
   version "5.5.3"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.5.3.tgz#f473dd47e0277a08e28e9bec5aeeb04751f0b8c9"
+
+acorn@^5.6.2:
+  version "5.7.3"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.7.3.tgz#67aa231bf8812974b85235a96771eb6bd07ea279"
 
 address@1.0.3, address@^1.0.1:
   version "1.0.3"
@@ -1770,6 +1917,12 @@ chownr@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-1.0.1.tgz#e2a75042a9551908bebd25b8523d5f9769d79181"
 
+chrome-trace-event@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/chrome-trace-event/-/chrome-trace-event-1.0.0.tgz#45a91bd2c20c9411f0963b5aaeb9a1b95e09cc48"
+  dependencies:
+    tslib "^1.9.0"
+
 ci-info@^1.0.0:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/ci-info/-/ci-info-1.1.3.tgz#710193264bb05c77b8c90d02f5aaf22216a667b2"
@@ -1915,7 +2068,7 @@ commander@~2.13.0:
   version "2.13.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.13.0.tgz#6964bca67685df7c1f1430c584f07d7597885b9c"
 
-common-shake@^2.0.2:
+common-shake@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/common-shake/-/common-shake-2.1.0.tgz#690f93cec9f7387ac384703e4c033897220a250b"
   dependencies:
@@ -2632,6 +2785,14 @@ enhanced-resolve@^3.4.0:
     object-assign "^4.0.1"
     tapable "^0.2.7"
 
+enhanced-resolve@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/enhanced-resolve/-/enhanced-resolve-4.1.0.tgz#41c7e0bfdfe74ac1ffe1e57ad6a5c6c9f3742a7f"
+  dependencies:
+    graceful-fs "^4.1.2"
+    memory-fs "^0.4.0"
+    tapable "^1.0.0"
+
 entities@~1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/entities/-/entities-1.1.1.tgz#6e5c2d0a5621b5dadaecef80b90edfb5cd7772f0"
@@ -2908,6 +3069,13 @@ eslint-plugin-react@^7.7.0:
 eslint-scope@^3.7.1, eslint-scope@~3.7.1:
   version "3.7.1"
   resolved "https://registry.yarnpkg.com/eslint-scope/-/eslint-scope-3.7.1.tgz#3d63c3edfda02e06e01a452ad88caacc7cdcb6e8"
+  dependencies:
+    esrecurse "^4.1.0"
+    estraverse "^4.1.1"
+
+eslint-scope@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-scope/-/eslint-scope-4.0.0.tgz#50bf3071e9338bcdc43331794a0cb533f0136172"
   dependencies:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
@@ -4740,6 +4908,10 @@ js-tokens@^3.0.0, js-tokens@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
 
+"js-tokens@^3.0.0 || ^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
+
 js-yaml@^3.4.3, js-yaml@^3.7.0, js-yaml@^3.9.1:
   version "3.11.0"
   resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.11.0.tgz#597c1a8bd57152f26d622ce4117851a51f5ebaef"
@@ -4797,6 +4969,10 @@ jsesc@~0.5.0:
 json-loader@^0.5.4:
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/json-loader/-/json-loader-0.5.7.tgz#dca14a70235ff82f0ac9a3abeb60d337a365185d"
+
+json-parse-better-errors@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/json-parse-better-errors/-/json-parse-better-errors-1.0.2.tgz#bb867cfb3450e69107c131d1c514bab3dc8bcaa9"
 
 json-schema-traverse@^0.3.0:
   version "0.3.1"
@@ -5069,6 +5245,12 @@ loose-envify@^1.0.0, loose-envify@^1.3.1:
   dependencies:
     js-tokens "^3.0.0"
 
+loose-envify@^1.1.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
+  dependencies:
+    js-tokens "^3.0.0 || ^4.0.0"
+
 loud-rejection@^1.0.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/loud-rejection/-/loud-rejection-1.6.0.tgz#5b46f80147edee578870f086d04821cf998e551f"
@@ -5106,6 +5288,10 @@ makeerror@1.0.x:
   resolved "https://registry.yarnpkg.com/makeerror/-/makeerror-1.0.11.tgz#e01a5c9109f2af79660e4e8b9587790184f5a96c"
   dependencies:
     tmpl "1.0.x"
+
+mamacro@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/mamacro/-/mamacro-0.0.3.tgz#ad2c9576197c9f1abf308d0787865bd975a3f3e4"
 
 map-cache@^0.2.2:
   version "0.2.2"
@@ -6257,6 +6443,13 @@ prop-types@^15.5.10, prop-types@^15.6.0:
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 
+prop-types@^15.6.2:
+  version "15.6.2"
+  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
+  dependencies:
+    loose-envify "^1.3.1"
+    object-assign "^4.1.1"
+
 proxy-addr@~2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/proxy-addr/-/proxy-addr-2.0.3.tgz#355f262505a621646b3130a728eb647e22055341"
@@ -6415,6 +6608,15 @@ react-dom@^0.14.0:
   version "0.14.9"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-0.14.9.tgz#05064a3dcf0fb1880a3b2bfc9d58c55d8d9f6293"
 
+react-dom@^16.3.2:
+  version "16.5.2"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.5.2.tgz#b69ee47aa20bab5327b2b9d7c1fe2a30f2cfa9d7"
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+    schedule "^0.5.0"
+
 react-error-overlay@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.0.tgz#d198408a85b4070937a98667f500c832f86bd5d4"
@@ -6469,6 +6671,15 @@ react@^0.14.0:
   dependencies:
     envify "^3.0.0"
     fbjs "^0.6.1"
+
+react@^16.3.2:
+  version "16.5.2"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.5.2.tgz#19f6b444ed139baa45609eee6dc3d318b3895d42"
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+    schedule "^0.5.0"
 
 read-pkg-up@^1.0.1:
   version "1.0.1"
@@ -6885,11 +7096,24 @@ sax@^1.2.1, sax@~1.2.1:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
 
+schedule@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/schedule/-/schedule-0.5.0.tgz#c128fffa0b402488b08b55ae74bb9df55cc29cc8"
+  dependencies:
+    object-assign "^4.1.1"
+
 schema-utils@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-0.3.0.tgz#f5877222ce3e931edae039f17eb3716e7137f8cf"
   dependencies:
     ajv "^5.0.0"
+
+schema-utils@^0.4.4:
+  version "0.4.7"
+  resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-0.4.7.tgz#ba74f597d2be2ea880131746ee17d0a093c68187"
+  dependencies:
+    ajv "^6.1.0"
+    ajv-keywords "^3.1.0"
 
 schema-utils@^0.4.5:
   version "0.4.5"
@@ -7456,6 +7680,10 @@ tapable@^0.2.7:
   version "0.2.8"
   resolved "https://registry.yarnpkg.com/tapable/-/tapable-0.2.8.tgz#99372a5c999bf2df160afc0d74bed4f47948cd22"
 
+tapable@^1.0.0, tapable@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/tapable/-/tapable-1.1.0.tgz#0d076a172e3d9ba088fd2272b2668fb8d194b78c"
+
 tar-pack@^3.4.0:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/tar-pack/-/tar-pack-3.4.1.tgz#e1dbc03a9b9d3ba07e896ad027317eb679a10a1f"
@@ -7619,6 +7847,10 @@ trim@0.0.1:
 trough@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trough/-/trough-1.0.1.tgz#a9fd8b0394b0ae8fff82e0633a0a36ccad5b5f86"
+
+tslib@^1.9.0:
+  version "1.9.3"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
 
 tty-browserify@0.0.0:
   version "0.0.0"
@@ -7977,6 +8209,14 @@ watchpack@^1.4.0:
     graceful-fs "^4.1.2"
     neo-async "^2.5.0"
 
+watchpack@^1.5.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/watchpack/-/watchpack-1.6.0.tgz#4bc12c2ebe8aa277a71f1d3f14d685c7b446cd00"
+  dependencies:
+    chokidar "^2.0.2"
+    graceful-fs "^4.1.2"
+    neo-async "^2.5.0"
+
 wbuf@^1.1.0, wbuf@^1.7.2:
   version "1.7.3"
   resolved "https://registry.yarnpkg.com/wbuf/-/wbuf-1.7.3.tgz#c1d8d149316d3ea852848895cb6a0bfe887b87df"
@@ -7991,14 +8231,14 @@ webidl-conversions@^4.0.0:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"
 
-webpack-common-shake@^1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/webpack-common-shake/-/webpack-common-shake-1.5.3.tgz#d239321a71a2d5128e5fb871616ce340db729bbb"
+webpack-common-shake@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/webpack-common-shake/-/webpack-common-shake-2.0.2.tgz#d25b60dceb277c787394a9aa6accc3debc26e9bf"
   dependencies:
-    acorn "^5.1.1"
-    common-shake "^2.0.2"
-    webpack "^3.1.0"
-    webpack-sources "^1.0.1"
+    acorn "^5.2.1"
+    common-shake "^2.1.0"
+    webpack "^4.16.5"
+    webpack-sources "^1.1.0"
 
 webpack-dev-middleware@^1.11.0:
   version "1.12.2"
@@ -8056,6 +8296,13 @@ webpack-sources@^1.0.1, webpack-sources@^1.1.0:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
+webpack-sources@^1.2.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/webpack-sources/-/webpack-sources-1.3.0.tgz#2a28dcb9f1f45fe960d8f1493252b5ee6530fa85"
+  dependencies:
+    source-list-map "^2.0.0"
+    source-map "~0.6.1"
+
 webpack-visualizer-plugin@^0.1.11:
   version "0.1.11"
   resolved "https://registry.yarnpkg.com/webpack-visualizer-plugin/-/webpack-visualizer-plugin-0.1.11.tgz#b8770ad86b4f652612c68b1b782253faf9f8a34e"
@@ -8092,32 +8339,34 @@ webpack@3.8.1:
     webpack-sources "^1.0.1"
     yargs "^8.0.2"
 
-webpack@^3.1.0:
-  version "3.11.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-3.11.0.tgz#77da451b1d7b4b117adaf41a1a93b5742f24d894"
+webpack@^4.16.5:
+  version "4.19.1"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.19.1.tgz#096674bc3b573f8756c762754366e5b333d6576f"
   dependencies:
-    acorn "^5.0.0"
-    acorn-dynamic-import "^2.0.0"
+    "@webassemblyjs/ast" "1.7.6"
+    "@webassemblyjs/helper-module-context" "1.7.6"
+    "@webassemblyjs/wasm-edit" "1.7.6"
+    "@webassemblyjs/wasm-parser" "1.7.6"
+    acorn "^5.6.2"
+    acorn-dynamic-import "^3.0.0"
     ajv "^6.1.0"
     ajv-keywords "^3.1.0"
-    async "^2.1.2"
-    enhanced-resolve "^3.4.0"
-    escope "^3.6.0"
-    interpret "^1.0.0"
-    json-loader "^0.5.4"
-    json5 "^0.5.1"
+    chrome-trace-event "^1.0.0"
+    enhanced-resolve "^4.1.0"
+    eslint-scope "^4.0.0"
+    json-parse-better-errors "^1.0.2"
     loader-runner "^2.3.0"
     loader-utils "^1.1.0"
     memory-fs "~0.4.1"
+    micromatch "^3.1.8"
     mkdirp "~0.5.0"
+    neo-async "^2.5.0"
     node-libs-browser "^2.0.0"
-    source-map "^0.5.3"
-    supports-color "^4.2.1"
-    tapable "^0.2.7"
-    uglifyjs-webpack-plugin "^0.4.6"
-    watchpack "^1.4.0"
-    webpack-sources "^1.0.1"
-    yargs "^8.0.2"
+    schema-utils "^0.4.4"
+    tapable "^1.1.0"
+    uglifyjs-webpack-plugin "^1.2.4"
+    watchpack "^1.5.0"
+    webpack-sources "^1.2.0"
 
 websocket-driver@>=0.5.1:
   version "0.7.0"
