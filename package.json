@@ -21,7 +21,7 @@
     "lodash-webpack-plugin": "^0.11.4",
     "lodash.isstring": "^4.0.1",
     "mz": "^2.7.0",
-    "react-scripts": "^1.1.1",
+    "react-scripts": "^2.0.3",
     "send": "^0.16.2",
     "sw-precache-webpack-plugin": "^0.11.5",
     "uglifyjs-webpack-plugin": "^1.2.4",
